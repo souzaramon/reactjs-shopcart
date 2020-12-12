@@ -12,7 +12,7 @@ export default function Card(props: Props) {
 
   return (
     <Container>
-      <img src={data.url_thumbnail} alt={`Picture of ${data.display_text}`} />
+      <img src={data.url_thumbnail} alt={data.display_text} />
 
       <footer>
         <h3>{data.display_text}</h3>
