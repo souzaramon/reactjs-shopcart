@@ -16,6 +16,7 @@ const Base = styled.button`
 `;
 
 const Button = {
+  Empty: Base,
   Outlined: styled(Base)`
     padding: 7px;
     border: 1px solid ${({ theme }) => theme?.colors?.primary || "#000"};

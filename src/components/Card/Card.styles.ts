@@ -9,6 +9,10 @@ export const Container = styled.div`
   box-shadow: 0px 13px 21px -5px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 
+  img {
+    height: 220px;
+  }
+
   footer {
     display: flex;
     flex-direction: column;

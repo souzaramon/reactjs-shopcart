@@ -20,6 +20,26 @@ export const Container = styled(motion.div).attrs({
 })`
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 15px;
+
+  > header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    span {
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
 
   section {
     width: fit-content;
