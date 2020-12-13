@@ -5,10 +5,18 @@ import { Container } from "./Card.styles";
 
 type Props = {
   data: Product;
+  inside_cart?: number;
+  onAdd?: any;
+  onDelete?: any;
 };
 
 export default function Card(props: Props) {
-  const { data } = props;
+  const {
+    data,
+    inside_cart = 0,
+    onAdd = () => {},
+    onDelete = () => {},
+  } = props;
 
   return (
     <Container>
@@ -23,7 +31,14 @@ export default function Card(props: Props) {
           })}
         </h4>
 
-        <Button.Outlined>Buy</Button.Outlined>
+        <div>
+          <span>{inside_cart > 0 ? `${inside_cart} added` : ""}</span>
+
+          <Button.Rounded onClick={onAdd}>+</Button.Rounded>
+          <Button.Rounded disabled={!inside_cart} onClick={onDelete}>
+            -
+          </Button.Rounded>
+        </div>
       </footer>
     </Container>
   );

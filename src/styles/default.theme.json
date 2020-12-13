@@ -1,0 +1,10 @@
+{
+  "variant": "light",
+  "colors": {
+    "primary": "#06090f",
+    "text": "#06090f",
+    "background": "#fff",
+    "shadows": "rgba(0, 0, 0, 0.1)"
+  },
+  "overlay": "rgba(101,108,133,0.8)"
+}

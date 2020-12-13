@@ -22,22 +22,19 @@ export const Container = styled(motion.div).attrs({
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
   padding-top: 15px;
+  background-color: ${({ theme }) => theme.colors.background};
+  transition: background ease 0.3s;
+  background-image: url(${process.env.PUBLIC_URL + "/assets/pattern.webp"});
+  background-size: 150px, auto;
 
   > header {
     display: flex;
-    justify-content: center;
-    align-items: center;
 
-    width: 100%;
-
-    span {
-      font-weight: normal;
-      text-transform: uppercase;
-      letter-spacing: 10px;
-      margin-left: 15px;
-      margin-right: 15px;
+    & > * {
+      margin: 20px;
+      margin-left: 5px;
     }
   }
 
@@ -49,6 +46,7 @@ export const Container = styled(motion.div).attrs({
 
     grid-gap: 55px;
     padding: 55px;
+    padding-top: 20px;
 
     @media only screen and (max-width: 850px) {
       & {

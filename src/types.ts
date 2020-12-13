@@ -4,3 +4,15 @@ export type Product = {
   display_text: string;
   url_thumbnail: string;
 };
+
+export type ProductInCart = {
+  data: Product;
+  quantity: number;
+};
+
+export type StateCart = ProductInCart[];
+
+export type Action = {
+  type: string;
+  payload: any;
+};

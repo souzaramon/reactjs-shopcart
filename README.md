@@ -17,6 +17,7 @@
 - **styled-components**
 - **framer-motion**
 - **react-icons**
+- **react-toastify**
 
 ## License
 
