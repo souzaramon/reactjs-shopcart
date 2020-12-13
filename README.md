@@ -1,3 +1,23 @@
-# reactjs-shopcart
+# :electron: Simple shop-cart app
 
-> [see it runing here](http://souzaramon.github.io/reactjs-shopcart)
+<div align="center">
+<img  src="/docs/screenshot" height="400px"/>
+</div>
+
+> Screenshot of the homepage
+
+## Demo
+
+[See it runing here](http://souzaramon.github.io/reactjs-shopcart)
+
+## It uses
+
+- **react-context**
+- **immerjs**
+- **styled-components**
+- **framer-motion**
+- **react-icons**
+
+## License
+
+MIT
