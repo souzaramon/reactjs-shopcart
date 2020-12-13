@@ -5,12 +5,15 @@ export type Product = {
   url_thumbnail: string;
 };
 
-export type ProductInCart = {
+export type CartContent = {
   data: Product;
   quantity: number;
-};
+}[];
 
-export type StateCart = ProductInCart[];
+export type Cart = {
+  content: CartContent;
+  isOpen: boolean;
+};
 
 export type Action = {
   type: string;

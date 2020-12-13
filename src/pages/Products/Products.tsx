@@ -1,18 +1,13 @@
-import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { AiOutlineShoppingCart, AiFillBulb } from "react-icons/ai";
 
-import { Button, Card, Modal } from "../../components";
+import { Button, Card } from "../../components";
 import { useProducts } from "../../api/queries";
 import { useCart, useTheme } from "../../context";
 
 import { Container } from "./Products.styles";
 
-import Cart from "./Cart";
-
 export default function Products() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const { toggleTheme } = useTheme();
   const cartState = useCart();
 
@@ -22,11 +17,9 @@ export default function Products() {
     <Container>
       <header>
         <Button.RoundedWithBadge
-          disabled={cartState.state.length < 1 || isLoading}
-          onClick={() => {
-            setIsModalOpen(true);
-          }}
-          n={isLoading ? 0 : cartState.totalItems}
+          onClick={cartState.actions.toggleIsOpen}
+          disabled={cartState.content.length < 1 || isLoading}
+          n={isLoading ? 0 : cartState.totalQuantity}
         >
           <AiOutlineShoppingCart size={21} />
         </Button.RoundedWithBadge>
@@ -42,25 +35,12 @@ export default function Products() {
               <Card
                 key={product.id}
                 data={product}
-                onAdd={() => cartState.add(product)}
-                onDelete={() => cartState.destroy(product)}
-                inside_cart={cartState.findQuantity(product.id)}
+                onAdd={() => cartState.actions.add(product)}
+                onDelete={() => cartState.actions.remove(product)}
+                inside_cart={cartState.countById(product.id)}
               />
             ))}
       </section>
-
-      <Modal
-        isOpen={isModalOpen}
-        setIsOpen={setIsModalOpen}
-        title="Checkout"
-        heigth="700px"
-        width="550px"
-      >
-        <Cart
-          cartState={cartState}
-          onCartIsEmpty={() => setIsModalOpen(false)}
-        />
-      </Modal>
     </Container>
   );
 }
