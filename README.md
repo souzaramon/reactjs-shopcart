@@ -1,7 +1,7 @@
 # :electron: Simple shop cart app
 
 <div align="center">
-<img  src="/docs/screenshot.png" />
+<img  src="/docs/home.png" />
 </div>
 
 > Screenshot of the homepage
